@@ -8,6 +8,6 @@ install:
   - go get github.com/jonas-p/go-shp
   
 script:
-  - curl http://efele.net/maps/tz/world/tz_world.zip
+  - curl -O http://efele.net/maps/tz/world/tz_world.zip
   - unzip tz_world.zip
   - make
