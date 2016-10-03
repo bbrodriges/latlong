@@ -14,6 +14,7 @@ install:
 before_script:
   - git config --global user.email "bender.rodriges@gmail.com"
   - git config --global user.name "Travis CI"
+  - git config --global push.default simple
 
 script:
   - curl -O http://efele.net/maps/tz/world/tz_world.zip
