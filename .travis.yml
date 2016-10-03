@@ -11,3 +11,5 @@ script:
   - curl -O http://efele.net/maps/tz/world/tz_world.zip
   - unzip tz_world.zip
   - make
+  - rm -rf tz_world.zip world/
+  - git diff
