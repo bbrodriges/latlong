@@ -1,3 +1,23 @@
+# Disclaimer
+
+This is a fork of patched package originaly authored by Brad Fitzpatrick.
+It has been setted up to automatically generate new code against fresh
+world.shp file every day.
+
+Current build status: [![Build Status](https://travis-ci.org/bbrodriges/latlong.svg?branch=master)](https://travis-ci.org/bbrodriges/latlong)
+
+# Usage
+
+This packages guarantees backward compatibility.
+So update as often as possible.
+
+```
+go get -u github.com/bbrodriges/latlong
+```
+
+# Original bradfitz message
+
+```
 This is a Go package which maps a (lat, long) to a timezone.
 
 My motivation was figuring out the UTC time of a JPG with EXIF
@@ -26,3 +46,4 @@ Another image of the underlying data structure:
 ... the tile borders are only there for debugging, to show areas with
 only one timezone. Tiles without borders around them still work; at
 that level, the small possible bitmap is used for lookup.
+```
