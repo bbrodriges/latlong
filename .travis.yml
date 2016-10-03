@@ -27,4 +27,4 @@ after_success:
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - git add -A
   - git commit -m "Daily Travis CI build"
-  - git push
+  - git push origin master
