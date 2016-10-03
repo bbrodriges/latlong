@@ -11,6 +11,10 @@ install:
   - go get github.com/golang/freetype/raster
   - go get github.com/jonas-p/go-shp
 
+before_script:
+  - git config --global user.email "bender.rodriges@gmail.com"
+  - git config --global user.name "Travis CI"
+
 script:
   - curl -O http://efele.net/maps/tz/world/tz_world.zip
   - unzip tz_world.zip
