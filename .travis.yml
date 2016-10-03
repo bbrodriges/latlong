@@ -1,0 +1,11 @@
+language: go
+
+go:
+  - tip
+  
+install:
+  - go get github.com/golang/freetype/raster
+  - go get github.com/jonas-p/go-shp
+  
+script:
+ - make
