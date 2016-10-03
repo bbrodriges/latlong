@@ -3,10 +3,6 @@ language: go
 go:
 - tip
 
-branches:
-  only:
-  - autobuild
-
 env:
   global:
   - secure: G8FU1aC0m8V+2BwtTXyRywcMXao8uU9s3pIx/MedZG1xt3xjQ+zuw9v1PHW4pCuyiuiqkBX6qZKNlDG2eunb5VZtz8+t8Jfku384H3NQLnR9QTOTQC1a04OaYjwgdWYQth5lrIDQyryingW6L1RJEXO4lJkF7nNTXWakvdfzR69bJVbP/o8kTDuqwqsdSn/u7A3ZLuWm3rMMjymfTJngFkj5yJw9uFjZ73ts+Kwrabxrz2M3mPG5iSA7VqG9dMKk43fQqH/VQhvxtynyLW/7HaY0MqYmyRIbrSgPlg4pSn1W7mWQOndt3neE9p7O50Q8I7adyN/CETKuTzIZUKIhbUilwk3NxgD7tKYnAG9U9Nn+oXypPV5Pl8x11YOSrSqFDluwiTYJBxUNX8RqQ6KTcBWI6Wb7uZ3eWCJwRh79P56CvAGEXOh+/fjn6J21nwe3VdaUD8YB7N6AUOkt/y424YXRTCHYoRUWARRAScxrgLtD4NO2ADK9STZ+9iT+KRj3YZeNd3QNw3v84FupK6Mzsqafy4XOTG8pQ+KuglXu05QsyrdLxPX/EIkybpewPU3aECkk9MEacbYuwoUeeIdBrKH1/Hr2GH4APqt367+OkaAn3EDBx57j9vx/f0ukv6jKOjG+Qmq+f3kxOTsPK6+O2x3qLIbLTttmgTpho9V65Lw=
@@ -21,8 +17,7 @@ before_script:
   - git config --global push.default simple
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-  - git checkout master && git pull
-  - git checkout autobuild && git pull
+  - git checkout master
 
 script:
   - curl -O http://efele.net/maps/tz/world/tz_world.zip
@@ -33,5 +28,4 @@ script:
 after_success:
   - git add -A
   - git commit -m "Daily Travis CI build"
-  - git checkout master
   - git push origin master
