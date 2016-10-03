@@ -33,4 +33,5 @@ script:
 after_success:
   - git add -A
   - git commit -m "Daily Travis CI build"
+  - git checkout master
   - git push origin master
